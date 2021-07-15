@@ -27,8 +27,15 @@ backend:
   listen:
     port: 7000
   database:
-    client: sqlite3
-    connection: ':memory:'
+    # client: sqlite3
+    # connection: ':memory:'
+    # config options: https://node-postgres.com/api/client
+      client: pg
+      connection:
+        host: localhost
+        port: 54320
+        user: postgres
+        password: my_password
   cache:
     store: memory
   cors:
